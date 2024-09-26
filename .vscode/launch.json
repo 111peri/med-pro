@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://Grammarly",
+            "request": "launch",
+            "url": "http://Grammarly"
+        }
+    ]
+}

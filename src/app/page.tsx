@@ -11,7 +11,9 @@ import CombinedSection from './Components/CombinedSection';
 
 export default function Home() {
     return (
-        <div className="w-full conatiner  mx-auto font-gilroy">
+
+        <div className="*:mt-16 md:w-[1300px] mx-auto font-gilroy">
+
             <Hero />
             <OurMission />
             <Info />

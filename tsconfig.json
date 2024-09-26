@@ -14,9 +14,8 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // Изменено для поддержки React JSX
     "incremental": true,
-   
     "plugins": [
       {
         "name": "next"
@@ -33,7 +32,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-// , "src/app/Components/Testimonial.jsx"  ],
   ],
   "exclude": [
     "node_modules"
