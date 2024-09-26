@@ -1,4 +1,4 @@
-import Features from './Components/Features'; 
+// import Features from './Components/Features'; 
 import ImageBanner from './Components/ImageBanner';
 import Hero from '@/components/home/Hero';
 import OurMission from '@/components/home/OurMission';
@@ -18,7 +18,7 @@ export default function Home() {
             <OurMission />
             <Info />
             <CombinedSection/>
-            <Features />
+            {/* <Features /> */}
             <ImageBanner />
             <Doctors />
             <Feedback />
