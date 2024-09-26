@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { serviceDetails } from '@/data/servicesData'; // Здесь находится информация о враче
 import AppointmentForm from '@/app/appointmentForm';  // Компонент для формы записи
 
-
 interface Service {
   title: string;
   image: string;
@@ -64,7 +63,7 @@ const Page: React.FC = () => {
         </div>
 
         {isFormOpen && selectedDoctor && (
-          <AppointmentForm onClose={handleCloseForm} />
+          <AppointmentForm isOpen={isFormOpen} onClose={handleCloseForm} />
         )}  {/* Здесь подключаем компонент формы записи */}
       </div>
     </section>

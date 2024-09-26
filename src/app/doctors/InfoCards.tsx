@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { DoctorDetail } from '@/data/doctorData';
+import { DoctorCard} from '@/data/doctorData';
 
 interface InfoCardProps {
   title: string;
@@ -36,7 +36,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, content, link, icon }) => {
 };
 
 interface InfoCardsProps {
-  doctorData: DoctorDetail;
+  doctorData: DoctorCard;
 }
 
 const InfoCards: React.FC<InfoCardsProps> = ({ doctorData }) => {

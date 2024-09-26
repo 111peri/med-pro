@@ -2,14 +2,23 @@
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {  Mousewheel } from "swiper/modules"; 
+import { Mousewheel } from "swiper/modules"; 
 import "swiper/css";
 import "swiper/css/pagination";
 
 import { testimonials } from "@/data/data";
 
+// Интерфейс для свойств каждого отзыва
 interface TestimonialProps {
   id: number;
+  name: string;
+  image: string;
+  text: string;
+  rating: number;
+}
+
+// Интерфейс для слайдов (без id)
+interface SlideCardProps {
   name: string;
   image: string;
   text: string;
@@ -25,7 +34,7 @@ const Testimonial = () => {
       direction="vertical"
       pagination={{ clickable: true }}
       mousewheel={true}
-      modules={[Mousewheel]} // Убрали Scrollbar
+      modules={[Mousewheel]} 
     >
       {testimonials.map(({ id, name, image, text, rating }: TestimonialProps) => (
         <SwiperSlide key={id} className="!h-auto">
@@ -36,7 +45,8 @@ const Testimonial = () => {
   );
 };
 
-const SlideCard = ({ name, image, text, rating }: TestimonialProps) => {
+// Компонент для отображения одного слайда
+const SlideCard = ({ name, image, text, rating }: SlideCardProps) => {
   return (
     <div className="w-[464px] mt-[20px] bg-lightBlue rounded-3xl p-4 flex items-center">
       <Image

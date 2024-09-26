@@ -7,8 +7,9 @@ import { serviceDetails } from '@/data/servicesData';
 const ServicePage = () => {
   const { id } = useParams(); // Получаем id из URL
 
-  // Проверяем, если id есть, и находим соответствующую услугу
-  const service = id ? serviceDetails[parseInt(id)] : null;
+  // Убедимся, что id является строкой, прежде чем использовать parseInt
+  const serviceId = Array.isArray(id) ? id[0] : id;
+  const service = serviceId ? serviceDetails[parseInt(serviceId)] : null;
 
   if (!service) {
     return <div>Услуга не найдена</div>;
