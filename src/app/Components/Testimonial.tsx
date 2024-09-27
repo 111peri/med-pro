@@ -1,24 +1,17 @@
-'use client';
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel } from "swiper/modules"; 
+import { Pagination, Scrollbar, Mousewheel } from "swiper/modules"; 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 import { testimonials } from "@/data/data";
 
-// Интерфейс для свойств каждого отзыва
+// Интерфейс для отзывов
 interface TestimonialProps {
   id: number;
-  name: string;
-  image: string;
-  text: string;
-  rating: number;
-}
-
-// Интерфейс для слайдов (без id)
-interface SlideCardProps {
   name: string;
   image: string;
   text: string;
@@ -33,12 +26,13 @@ const Testimonial = () => {
       slidesPerView={3}
       direction="vertical"
       pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
       mousewheel={true}
-      modules={[Mousewheel]} 
+      modules={[Pagination, Scrollbar, Mousewheel]} 
     >
       {testimonials.map(({ id, name, image, text, rating }: TestimonialProps) => (
         <SwiperSlide key={id} className="!h-auto">
-          <SlideCard name={name} image={image} text={text} rating={rating} />
+          <SlideCard id={id} name={name} image={image} text={text} rating={rating} />
         </SwiperSlide>
       ))}
     </Swiper>
@@ -46,7 +40,7 @@ const Testimonial = () => {
 };
 
 // Компонент для отображения одного слайда
-const SlideCard = ({ name, image, text, rating }: SlideCardProps) => {
+const SlideCard = ({ id, name, image, text, rating }: TestimonialProps) => {
   return (
     <div className="w-[464px] mt-[20px] bg-lightBlue rounded-3xl p-4 flex items-center">
       <Image

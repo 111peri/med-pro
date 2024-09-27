@@ -1,30 +1,31 @@
-'use client';
+"use client";
 
 import React, { useState, Fragment } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Dialog, Transition } from '@headlessui/react';
 import { serviceDetails } from '@/data/servicesData';
-import AppointmentForm from '../appointmentForm';
+import AppointmentForm from '@/app/appointmentForm'; // Импортируем компонент формы
 
-const Services = () => {
+const Services: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Открытие формы записи
-  const handleOpenForm = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation(); // Остановить всплытие события
+  const handleOpenForm = () => {
     setIsModalOpen(true);
   };
 
   // Закрытие формы записи
-  const handleCloseForm = () => setIsModalOpen(false);
+  const handleCloseForm = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="w-full container mx-auto mt-[36px] font-gilroy">
       <div className="bg-white max-w-full h-custom-204 pt-[32px] pl-[32px] rounded-3xl font-gilroy text-center">
         <h1 className="text-[30px] font-bold text-left">Наши услуги</h1>
         <p className="text-left text-[22px] lg:w-[1236px] h-[92px] line-clamp-3">
-          В <b className="text-l font-gilroy text-lightBlue">Med-Pro</b> наша команда медицинских специалистов стремится обеспечить сострадательный и индивидуальный уход.
+          В <b className="text-l font-gilroy text-lightBlue">Med-Pro</b> наша команда медицинских специалистов стремится обеспечить сострадательный и индивидуальный уход. Каждый врач обладает богатым опытом и знаниями, гарантируя, что вы получите медицинское обслуживание высочайшего уровня. Познакомьтесь с нашей преданной командой ниже.
         </p>
       </div>
 
@@ -33,7 +34,7 @@ const Services = () => {
           const service = serviceDetails[Number(key)];
           return (
             <div key={key} className="bg-white w-custom-420 h-custom-341 shadow-lg overflow-hidden rounded-3xl relative">
-              <Link href={`/doctorInfo/${key}`} passHref>
+              <Link href={`/services/${key}`} passHref>
                 <div>
                   <Image
                     src={service.image}
@@ -44,21 +45,21 @@ const Services = () => {
                   />
                   <div className="flex flex-col pt-2 items-center">
                     <h3 className="text-3xl font-gilroy text-center">{service.title}</h3>
+                    <button
+                      className="button mt-4 px-4 py-2 text-white bg-lightBlue rounded-full absolute top-4 right-8 border-2 border-white"
+                      onClick={handleOpenForm}
+                    >
+                      Записаться
+                    </button>
                   </div>
                 </div>
               </Link>
-              <button
-                className="button mt-4 px-4 py-2 text-white bg-lightBlue rounded-full absolute top-4 right-8 border-2 border-white"
-                onClick={handleOpenForm}
-              >
-                Записаться
-              </button>
             </div>
           );
         })}
       </div>
 
-      {/* Модальное окно */}
+      {/* Модальное окно для формы записи на консультацию */}
       <Transition appear show={isModalOpen} as={Fragment}>
         <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={handleCloseForm}>
           <div className="fixed inset-0 bg-black opacity-30"></div>
@@ -75,12 +76,19 @@ const Services = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="relative inline-block w-full max-w-[800px] h-auto p-6 my-8 ">
-               
-                {/* Форма */}
-                <div className="flex flex-col gap-[20px]">
-                  <AppointmentForm isOpen={isModalOpen} onClose={handleCloseForm} />
-                </div>
+              <div className="relative inline-block w-full max-w-[800px] h-auto p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                <button
+                  onClick={handleCloseForm}
+                  className="absolute top-4 right-4 text-gray hover:text-gray-400"
+                >
+                  &#10007;
+                </button>
+
+                <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900 mb-4">
+                  Запись на консультацию
+                </Dialog.Title>
+
+                <AppointmentForm isOpen={isModalOpen} onClose={handleCloseForm} />
               </div>
             </Transition.Child>
           </div>

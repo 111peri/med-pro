@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { DoctorCard} from '@/data/doctorData';
+import { DoctorDetail } from '@/data/doctorData'; // Используем DoctorDetail, как в исправленном варианте
 
 interface InfoCardProps {
   title: string;
@@ -25,7 +25,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, content, link, icon }) => {
       <div className="flex items-center pl-[48px] mb-[25px]">
         <button
           onClick={handleClick}
-          className="font-gilroy-700 w-[439px] h-[54px] bg-lightBlue text-white text-[18px] pl-[20px]  rounded-2xl flex items-center justify-between"
+          className="font-gilroy-700 w-[439px] h-[54px] bg-lightBlue text-white text-[18px] pl-[20px] rounded-2xl flex items-center justify-between"
         >
           Перейти в профессиональный сайт врача
           <Image src={icon} alt="Icon" width={30} height={30} className="ml-[8px] mr-[20px]" />
@@ -36,7 +36,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, content, link, icon }) => {
 };
 
 interface InfoCardsProps {
-  doctorData: DoctorCard;
+  doctorData: DoctorDetail; // Используем DoctorDetail для корректного типа данных
 }
 
 const InfoCards: React.FC<InfoCardsProps> = ({ doctorData }) => {

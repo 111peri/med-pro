@@ -3,23 +3,25 @@ import { Dialog, Transition } from '@headlessui/react';
 
 interface AppointmentFormProps {
   onClose: () => void;
-  isOpen: boolean; // Добавляем проп для управления видимостью окна
+  isOpen: boolean; // Проп для управления видимостью окна
 }
 
 const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose, isOpen }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('Запись отправлена:', { name, phone });
-    onClose(); // Закрываем форму после отправки
+    console.log('Запись отправлена:', { name, phone, email });
+    onClose(); // Закрываем модальное окно после отправки формы
   };
 
   return (
-    <Transition appear show={isOpen} as={Fragment}> {/* Используем isOpen для управления видимостью */}
+    <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={onClose}>
-        <div className="fixed inset-0 bg-black opacity-5"></div>
+        <div className="fixed inset-0 bg-black opacity-30"></div>
+
         <div className="min-h-screen px-4 text-center">
           <span className="inline-block h-screen align-middle" aria-hidden="true">
             &#8203;
@@ -34,12 +36,17 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose, isOpen }) =>
             leaveTo="opacity-0 scale-95"
           >
             <div className="relative inline-block w-full max-w-[800px] h-auto p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+
+              {/* Кнопка закрытия (крестик) */}
               <button onClick={onClose} className="absolute top-4 right-4 text-gray hover:text-gray-400">
                 &#10007;
               </button>
-              <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray mb-4">
-                Запись на прием
+
+              <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900 mb-4">
+                Запись на консультацию
               </Dialog.Title>
+
+              {/* Форма с полями */}
               <form onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-[20px]">
                   <input
@@ -58,11 +65,24 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ onClose, isOpen }) =>
                     className="border border-gray-400 px-3 py-2 w-full rounded-xl"
                     required
                   />
-                  <button type="submit" className="border border-gray-400 px-6 py-3 bg-lightBlue text-white rounded-full">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="border border-gray-400 px-3 py-2 w-full rounded-xl"
+                    required
+                  />
+
+                  <button
+                    type="submit"
+                    className="bg-lightBlue text-white px-4 py-2 rounded-xl mt-4"
+                  >
                     Записаться
                   </button>
                 </div>
               </form>
+
             </div>
           </Transition.Child>
         </div>

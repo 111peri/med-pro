@@ -1,4 +1,5 @@
-// import Features from './Components/Features'; 
+
+
 import ImageBanner from './Components/ImageBanner';
 import Hero from '@/components/home/Hero';
 import OurMission from '@/components/home/OurMission';
@@ -12,13 +13,20 @@ import CombinedSection from './Components/CombinedSection';
 export default function Home() {
     return (
 
+
         <div className="*:mt-16 md:w-[1300px] mx-auto font-gilroy">
+
+
+        
 
             <Hero />
             <OurMission />
             <Info />
             <CombinedSection/>
-            {/* <Features /> */}
+
+
+           
+
             <ImageBanner />
             <Doctors />
             <Feedback />

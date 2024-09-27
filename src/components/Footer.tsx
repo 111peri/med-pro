@@ -13,7 +13,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="bg-[#22242A] mt-8">
-      <div className="container mx-auto pt-[65px]  pb-[32px] flex gap-32 items-center justify-between">
+      <div className="container mx-auto pt-[65px] w-custom-1300 pb-[32px] flex gap-32 items-center justify-between">
         <div className="h-[677px] w-[392px] bg-[#9CC8FC] rounded-2xl px-6 py-8 flex flex-col items-start justify-between hidden md:block">
           <div className="leading-tight">
             <p>Обратная связь</p>
@@ -41,11 +41,11 @@ const Footer = () => {
         <div className="flex-1 space-y-16 text-[14px] text-white">
           <div className="grid grid-cols-3 gap-6 *:first-line:text-[#FFAEAD]">
             <div>
-              <p className="mb-6">Инфо</p><br/>
-              <Link href={"/promotion"}>Акции</Link ><br/>
-              <Link href={"/hero"}>Статистика</Link ><br/>
-              <Link href={"/hero"}>Контакты</Link ><br/>
-              <Link href={"/hero"}>Соц сети</Link >
+              <p className="mb-6">Инфо</p>
+              <Link href={"/promotion"}>Акции</Link><br/>
+              <Link href={"/hero"}>Статистика</Link><br/>
+              <Link href={"/hero"}>Контакты</Link><br/>
+              <Link href={"/hero"}>Соц сети</Link>
             </div>
             <div>
               <p className="mb-6">
@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="first-line:text-[#FFAEAD]">
-            <p className="mb-6">Контакты</p><br/>
+            <p className="mb-6">Контакты</p>
             <Link href="tel:+996990090086">+996 (990) 090-086</Link><br/>
             <Link href="mailto:Medpro@gmail.com">Medpro@gmail.com</Link><br/>
             <Link href="https://maps.google.com/?q=Кыргызстан, г.Ош, улица Баялинова 180/А" target="_blank">
@@ -95,24 +95,16 @@ const Footer = () => {
           </div>
           <div className="flex items-end justify-between">
             <div className="flex items-center gap-3">
-              <Link
-                href={'https://wa.me/996555555555'}
-                className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
+              <Link href={'https://wa.me/996555555555'} className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
                 <WhatsappIcon />
               </Link>
-              <Link
-                href={'https://t.me/pavel'}
-                className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
+              <Link href={'https://t.me/pavel'} className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
                 <TelegramIcon />
               </Link>
-              <Link
-                href={'https://www.instagram.com/kaktus_media/'}
-                className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
+              <Link href={'https://www.instagram.com/kaktus_media/'} className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
                 <InstagramIcon />
               </Link>
-              <Link
-                href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}
-                className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
+              <Link href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'} className="w-[50px] h-[50px] border border-[#FFFFFF12] rounded-full flex items-center justify-center">
                 <YoutubeIcon />
               </Link>
             </div>

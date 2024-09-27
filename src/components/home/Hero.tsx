@@ -26,8 +26,10 @@ const Hero = () => {
                     <div className="flex gap-[6px] items-center flex-wrap mb-12">
                         {doctors.map((doctor) => (
                             <Link
+
                                 key={`doctorInfo/${doctor.id}`}
                                 href={`/doctorInfo/${doctor.id}`}  // Динамическая ссылка на страницу доктора
+
                                 className="border border-black rounded-full px-4 py-2 lg:py-3 xl:py-4 flex gap-[7px] items-center"
                             >
                                 {doctor.title}

@@ -1,31 +1,32 @@
 import cordiolog from '@/assets/images/home/doctors/cordiolog.png';
 import cosmetolog from '@/assets/images/home/doctors/cosmetolog.png';
 import dermotolog from '@/assets/images/home/doctors/dermotolog.png';
+
 export const doctors = [
   {
     id: 1,
     image: cordiolog,
-    title: 'Косметолог',
+    title: 'Терапевт',
   },
   {
     id: 2,
     image: dermotolog,
-    title: 'Стоматолог',
+    title: 'Педиатр',
   },
   {
     id: 3,
     image: cosmetolog,
-    title: 'Кардиолог',
+    title: 'Невролог',
   },
   {
     id: 4,
     image: cordiolog,
-    title: 'Гинеколог',
+    title: 'Кордиолог',
   },
   {
     id: 5,
     image: cosmetolog,
-    title: 'Психолог',
+    title: 'Уролог',
   },
   {
     id: 6,
@@ -35,7 +36,7 @@ export const doctors = [
   {
     id: 7,
     image: cosmetolog,
-    title: 'Терапевт ',
+    title: 'Стоматолог',
   },
 ];
 
@@ -77,6 +78,7 @@ export const infoBlock = [
     amount: '2000+',
   },
 ];
+
 export const testimonials = [
   {
     id: 1,
@@ -94,27 +96,6 @@ export const testimonials = [
   },
   {
     id: 3,
-    name: 'Razhabaliev Abay',
-    image: '/Ellipse2.png',
-    text: 'Я очень рад, что у меня была возможность провести лечение в вашей клинике. Очень удобный онлайн формат. Очень доброжелательные. Всегда готовы предложить удобное время и день для посещения доктора.',
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: 'Razhabaliev Abay',
-    image: '/Ellipse2.png',
-    text: 'Я очень рад, что у меня была возможность провести лечение в вашей клинике. Очень удобный онлайн формат. Очень доброжелательные. Всегда готовы предложить удобное время и день для посещения доктора.',
-    rating: 4,
-  },
-  {
-    id: 5,
-    name: 'Razhabaliev Abay',
-    image: '/Ellipse2.png',
-    text: 'Я очень рад, что у меня была возможность провести лечение в вашей клинике. Очень удобный онлайн формат. Очень доброжелательные. Всегда готовы предложить удобное время и день для посещения доктора.',
-    rating: 4,
-  },
-  {
-    id: 6,
     name: 'Razhabaliev Abay',
     image: '/Ellipse2.png',
     text: 'Я очень рад, что у меня была возможность провести лечение в вашей клинике. Очень удобный онлайн формат. Очень доброжелательные. Всегда готовы предложить удобное время и день для посещения доктора.',

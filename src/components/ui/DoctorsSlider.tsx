@@ -2,7 +2,7 @@
 
 import React, { useState, Fragment } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {  Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -42,7 +42,7 @@ const DoctorsSlider = () => {
                 spaceBetween={20}
                 slidesPerView={2.94}
                 pagination={{ clickable: true }}
-                modules={[ Pagination]} // Подключаем модули Navigation и Pagination
+                modules={[Pagination]} // Подключаем модули Navigation и Pagination
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
