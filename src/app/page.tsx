@@ -1,5 +1,5 @@
 
-
+import Features from '@/app/Components/Features'
 import ImageBanner from './Components/ImageBanner';
 import Hero from '@/components/home/Hero';
 import OurMission from '@/components/home/OurMission';
@@ -25,7 +25,7 @@ export default function Home() {
             <CombinedSection/>
 
 
-           
+            <Features/>
 
             <ImageBanner />
             <Doctors />
